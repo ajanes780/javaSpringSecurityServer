@@ -43,9 +43,18 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
 //                .httpBasic();
                 .formLogin()
-                .loginPage("/login").permitAll().defaultSuccessUrl("/courses", true)
+                    .loginPage("/login")
+                    .permitAll()
+                    .defaultSuccessUrl("/courses", true)
+                    .passwordParameter("password") // ref the form name prop in the form inputs
+                    .usernameParameter("username")
                 .and()
-                .rememberMe().tokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(21)).key("somethingVerySecure")// default 2 weeks
+                .rememberMe()
+                    .tokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(21))
+                    .key("somethingVerySecure")// default 2 weeks
+                    .rememberMeParameter("remember-me")
+
+
                 .and()
                 .logout()
                 .logoutUrl("/logout")
