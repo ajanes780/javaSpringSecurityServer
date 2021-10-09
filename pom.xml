@@ -11,8 +11,8 @@
 	<groupId>com.ignite</groupId>
 	<artifactId>aaronpractice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>aaronpractice</name>
-	<description>Demo project for Spring Boot secruirty</description>
+	<name>aaronPractice</name>
+	<description>Demo project for Spring Boot security</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
